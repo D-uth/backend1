@@ -11,8 +11,6 @@ def get_info():
     #query parameters
     slack_name = request.args.get('slack_name')
     track = request.args.get('track')
-    #github_file_url = request.args.get('github_file_url')
-    #github_source_url = request.args.get('github_source_url')
 
     # Validate parameters
     if not slack_name or not track:
