@@ -29,16 +29,19 @@ def get_info():
     if abs(time_difference_minutes)> allowed_time_difference_minutes:
         return jsonify({"error": "Invalid UTC time, outside the allowed time difference."}), 400
 
+    #Format the UTC_time in ISO 8601 format with 'Z' for UTC
+    #formatted_utc_time = current_utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+
     # Construct the response JSON
-    response = OrderedDict([
-        ("slack_name", slack_name),
-        ("current_day", current_day),
-        ("current_utc_time", current_utc_time.strftime('%Y-%m-%d %H:%M:%S %Z')),
-        ("track", track),
-        ("github_file_url", "https://github.com/D-uth/backend1/blob/main/endpoint.py"),
-        ("github_repo_url", "https://github.com/D-uth/backend1"),
-        ("status_code", "200")
-    ])
+    response = {
+        "slack_name": slack_name,
+        "current_day": current_day,
+        "utc_time": current_utc_time.strftime('%Y-%m-%dT%H:%M:%SZ'),
+        "track": track,
+        "github_file_url": "https://github.com/D-uth/backend1/blob/main/endpoint.py",
+        "github_repo_url": "https://github.com/D-uth/backend1",
+        "status_code": "200"
+    }
 
     return jsonify(response)
 
