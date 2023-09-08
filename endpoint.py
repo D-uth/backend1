@@ -35,7 +35,7 @@ def get_info():
         ("current_day", current_day),
         ("current_utc_time", current_utc_time.strftime('%Y-%m-%d %H:%M:%S %Z')),
         ("track", track),
-        ("github_file_url", "github_file_url"),
+        ("github_file_url", "https://github.com/D-uth/backend1/blob/main/endpoint.py"),
         ("github_repo_url", "https://github.com/D-uth/backend1"),
         ("status_code", "200")
     ])
